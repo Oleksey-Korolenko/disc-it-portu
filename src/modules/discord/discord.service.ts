@@ -15,4 +15,10 @@ export default class DiscordService {
   }
 
   public init = () => this.#client.login(this.#config.token);
+
+  public wearther = async () => {
+    const result = await this.#client.channels.cache.toJSON();
+
+    // console.log(result);
+  };
 }
