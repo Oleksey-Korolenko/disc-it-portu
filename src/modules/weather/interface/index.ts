@@ -1,1 +1,1 @@
-export * from './coordinate.interface';
+export * from './weather.interface';

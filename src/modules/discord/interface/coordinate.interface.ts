@@ -1,5 +1,5 @@
 export interface ICoordinate {
-  id: number;
+  id: string;
   name: string;
   latitude: number;
   longitude: number;

@@ -7,16 +7,7 @@ export default async (router: typeof Router) => {
   const discrodService = new DiscordService();
 
   await discrodService.init();
-  await discrodService.wearther();
-
-  /*
-  routes.get(
-    '/',
-    asyncHandler(async (req: Request, res: Response) => {
-      return QueryService.sendResponse<string>(200, 'response', res);
-    })
-  );
-  */
+  await discrodService.sendWeatherData();
 
   return routes;
 };
