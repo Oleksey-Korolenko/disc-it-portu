@@ -1,6 +1,7 @@
 import { AppConfigService } from '@config/config.service';
 import { DiscordBotConfigType } from '@config/modules';
 import WeatherService from '@modules/weather/weather.service';
+import { CronJob } from 'cron';
 import Discord, { Client, TextChannel } from 'discord.js';
 import { channelsToCoordinatos } from './constant';
 import { ICoordinate } from './interface';
@@ -25,10 +26,25 @@ export default class DiscordService {
 
   public init = () => this.#client.login(this.#config.token);
 
-  public sendWeatherData = async () => {
+  #sendWeatherData = async () => {
     for (const coordinate of this.#coordinates) {
       await this.#wearther(coordinate);
     }
+  };
+
+  public setCronJobs = async () => {
+    await this.#setWeatherCronJob();
+  };
+
+  #setWeatherCronJob = async () => {
+    const job = new CronJob(
+      '0 0 8 * * *',
+      async () => await this.#sendWeatherData(),
+      null,
+      true,
+      'Europe/Lisbon'
+    );
+    job.start();
   };
 
   #wearther = async (coordinate: ICoordinate) => {

@@ -2,6 +2,77 @@ import { ICoordinate } from '../interface';
 
 export const channelsToCoordinatos = [
   {
+    id: '955892762815889509',
+    name: 'ерисейре',
+    latitude: 38.9704149,
+    longitude: -9.434986
+  },
+  {
+    id: '954396123764772895',
+    name: 'портимау',
+    latitude: 37.2099515,
+    longitude: -8.6423976
+  },
+  {
+    id: '955044754318565416',
+    name: 'авейро',
+    latitude: 40.6588689,
+    longitude: -8.8629751
+  },
+  {
+    id: '955053767915606066',
+    name: 'оэйраш',
+    latitude: 38.729989,
+    longitude: -9.1633642
+  },
+  {
+    id: '954497886593355866',
+    name: 'синтра',
+    latitude: 38.7885635,
+    longitude: -9.4688193
+  },
+  {
+    id: '955075798354755654',
+    name: 'брага',
+    latitude: 41.5473167,
+    longitude: -8.483265
+  },
+  {
+    id: '954420095810158733',
+    name: 'коимбра',
+    latitude: 40.2288022,
+    longitude: -8.5599692
+  },
+  {
+    id: '954040166174060624',
+    name: 'острова',
+    latitude: 33.1533043,
+    longitude: -15.7980371
+  },
+  {
+    id: '953389608920559677',
+    name: 'порту',
+    latitude: 41.1621853,
+    longitude: -8.6937975
+  },
+  {
+    id: '954040079238717511',
+    name: 'кашкайш',
+    latitude: 39.020436,
+    longitude: -9.0840265
+  },
+  {
+    id: '953389592332079104',
+    name: 'лиссабон',
+    latitude: 38.7436716,
+    longitude: -9.2320472
+  }
+] as ICoordinate[];
+
+/*
+
+export const channelsToCoordinatos = [
+  {
     id: '960844588187258900',
     name: 'ерисейре',
     latitude: 38.9704149,
@@ -68,3 +139,6 @@ export const channelsToCoordinatos = [
     longitude: -9.2320472
   }
 ] as ICoordinate[];
+
+
+*/
