@@ -26,7 +26,6 @@ export default class DiscordService {
   public init = () => this.#client.login(this.#config.token);
 
   public sendWeatherData = async () => {
-    console.log('hi');
     for (const coordinate of this.#coordinates) {
       await this.#wearther(coordinate);
     }
@@ -38,14 +37,10 @@ export default class DiscordService {
       coordinate.longitude
     );
 
-    console.log('twohi');
-
     const text = this.#discordView.selectWeather(forecast);
 
     await (this.#client.channels.cache.get(coordinate.id) as TextChannel).send(
       text
     );
-
-    console.log('threehi');
   };
 }

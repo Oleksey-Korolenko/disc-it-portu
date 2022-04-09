@@ -15,12 +15,9 @@ export const weatherJob = async () => {
     port: 443
   };
 
-  await new QueryService()
-    .sendRequest<IDefaultHeaders, {}, undefined>(
-      queryAttributes,
-      {},
-      ETypeOperation.DEFAULT
-    )
-    .then(res => console.log(res))
-    .catch(e => console.log(e));
+  await new QueryService().sendRequest<IDefaultHeaders, {}, undefined>(
+    queryAttributes,
+    {},
+    ETypeOperation.DEFAULT
+  );
 };
