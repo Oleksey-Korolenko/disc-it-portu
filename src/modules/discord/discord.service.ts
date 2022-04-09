@@ -42,5 +42,9 @@ export default class DiscordService {
     await (this.#client.channels.cache.get(coordinate.id) as TextChannel).send(
       text
     );
+
+    await (this.#client.channels.cache.get(coordinate.id) as TextChannel).send({
+      files: [`https:${forecast.day.condition.icon}`]
+    });
   };
 }
