@@ -9,7 +9,7 @@ export const weatherJob = async () => {
 
   const queryAttributes: IQueryAttributes<IDefaultHeaders> = {
     hostname: 'disc-portu-it.herokuapp.com',
-    path: '/api/discord/getWeather',
+    path: '/api/discord/sendWeather',
     method: 'POST',
     headers,
     port: 443
