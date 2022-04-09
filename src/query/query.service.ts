@@ -82,6 +82,7 @@ export default class QueryService {
             responseBody += chunk;
           });
           res.on('end', () => {
+            console.log(responseBody);
             try {
               resolve({
                 code: EQueryCode.OK,
