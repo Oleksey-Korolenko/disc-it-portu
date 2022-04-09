@@ -1,6 +1,7 @@
 import express from 'express';
 import requireAll from 'require-all';
 import dotenv from 'dotenv';
+import cors from 'cors';
 import { catchError } from './middlewares';
 import { LoggerService } from './logger';
 
@@ -11,13 +12,14 @@ const bootstrap = async () => {
   dotenv.config();
 
   app.use(express.json({ limit: '3mb' }));
+  app.use(cors());
 
   const logger = new LoggerService().getLogger();
 
   const controllers = requireAll({
     dirname: `${__dirname}/modules`,
     filter: /^.+\.(controller)\.(t|j)s$/,
-    recursive: true,
+    recursive: true
   });
 
   for (const name in controllers) {
