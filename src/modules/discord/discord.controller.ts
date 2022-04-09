@@ -9,6 +9,7 @@ export default async (router: typeof Router) => {
   const discrodService = new DiscordService();
 
   await discrodService.init();
+  // await discrodService.sendWeatherData();
 
   routes.post(
     '/sendWeather',
